@@ -1,6 +1,6 @@
 <nav>
 	<a href="../admin/index.php">Home</a><!--
-	--><a href="../admin/view_retailer.php">Pengecek</a><!--
+	--><a href="../admin/view_retailer.php">Pengecer</a><!--
 	--><a href="../admin/view_manufacturer.php">Pabrik</a><!--
 
 	--><a href="../admin/view_products.php">Produk</a><!--
