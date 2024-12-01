@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2024 at 02:59 AM
+-- Generation Time: Dec 01, 2024 at 07:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -58,7 +58,8 @@ CREATE TABLE `area` (
 
 INSERT INTO `area` (`area_id`, `area_name`, `area_code`) VALUES
 (1, 'Makassar', 'UPG'),
-(6, 'MAROS', 'MRS');
+(6, 'MAROS', 'MRS'),
+(7, 'BANDUNG', 'BDG');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE `distributor` (
   `dist_id` int(11) NOT NULL,
   `dist_name` varchar(25) NOT NULL,
   `dist_email` varchar(50) DEFAULT NULL,
-  `dist_phone` varchar(10) NOT NULL,
+  `dist_phone` varchar(12) NOT NULL,
   `dist_address` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -140,7 +141,7 @@ CREATE TABLE `manufacturer` (
   `man_id` int(11) NOT NULL,
   `man_name` varchar(25) NOT NULL,
   `man_email` varchar(50) DEFAULT NULL,
-  `man_phone` varchar(10) NOT NULL,
+  `man_phone` varchar(12) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -150,7 +151,7 @@ CREATE TABLE `manufacturer` (
 --
 
 INSERT INTO `manufacturer` (`man_id`, `man_name`, `man_email`, `man_phone`, `username`, `password`) VALUES
-(7, 'Pabrik', 'pabrik@gmail.com', '', 'pabrik', 'pabrik');
+(7, 'Pabrik', 'pabrik@gmail.com', '085397425303', 'pabrik', 'pabrik');
 
 -- --------------------------------------------------------
 
@@ -201,7 +202,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`pro_id`, `pro_name`, `pro_desc`, `pro_price`, `unit`, `pro_cat`, `quantity`) VALUES
-(17, 'Kue Coklat', 'kue', 2000.000, 1, 12, 54);
+(19, 'Kue Coklat', 'hr', 50000.000, 3, 12, 86);
 
 -- --------------------------------------------------------
 
@@ -215,7 +216,7 @@ CREATE TABLE `retailer` (
   `password` varchar(25) NOT NULL,
   `address` varchar(200) NOT NULL,
   `area_id` int(11) NOT NULL,
-  `phone` varchar(10) NOT NULL,
+  `phone` varchar(12) NOT NULL,
   `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -225,6 +226,22 @@ CREATE TABLE `retailer` (
 
 INSERT INTO `retailer` (`retailer_id`, `username`, `password`, `address`, `area_id`, `phone`, `email`) VALUES
 (6, 'pengecer', 'pengecer', 'pengecer', 1, '0853974253', 'retailer@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `returns`
+--
+
+CREATE TABLE `returns` (
+  `return_id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `order_item_id` int(11) DEFAULT NULL,
+  `return_quantity` int(11) DEFAULT NULL,
+  `return_reason` text DEFAULT NULL,
+  `return_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `return_status` enum('Pending','Approved','Rejected') DEFAULT 'Pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -243,7 +260,6 @@ CREATE TABLE `unit` (
 --
 
 INSERT INTO `unit` (`id`, `unit_name`, `unit_details`) VALUES
-(1, 'KG', 'Kilo Gram'),
 (2, 'PCS', 'Pieces'),
 (3, 'LTR', 'Liter\r\n');
 
@@ -333,6 +349,15 @@ ALTER TABLE `retailer`
   ADD KEY `area_id_4` (`area_id`);
 
 --
+-- Indexes for table `returns`
+--
+ALTER TABLE `returns`
+  ADD PRIMARY KEY (`return_id`),
+  ADD KEY `order_id` (`order_id`,`order_item_id`),
+  ADD KEY `order_item_id` (`order_item_id`),
+  ADD KEY `order_id_2` (`order_id`);
+
+--
 -- Indexes for table `unit`
 --
 ALTER TABLE `unit`
@@ -352,13 +377,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `area`
 --
 ALTER TABLE `area`
-  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `distributor`
@@ -370,13 +395,13 @@ ALTER TABLE `distributor`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `invoice_items`
 --
 ALTER TABLE `invoice_items`
-  MODIFY `invoice_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `invoice_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `manufacturer`
@@ -388,25 +413,31 @@ ALTER TABLE `manufacturer`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `order_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `retailer`
 --
 ALTER TABLE `retailer`
   MODIFY `retailer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `returns`
+--
+ALTER TABLE `returns`
+  MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `unit`
@@ -458,6 +489,13 @@ ALTER TABLE `products`
 --
 ALTER TABLE `retailer`
   ADD CONSTRAINT `retailer_ibfk_1` FOREIGN KEY (`area_id`) REFERENCES `area` (`area_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `returns`
+--
+ALTER TABLE `returns`
+  ADD CONSTRAINT `returns_ibfk_1` FOREIGN KEY (`order_item_id`) REFERENCES `order_items` (`order_items_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `returns_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

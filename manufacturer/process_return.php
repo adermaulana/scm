@@ -16,12 +16,14 @@ if(isset($_GET['action']) && isset($_GET['return_id'])) {
         $return_id = mysqli_real_escape_string($con, $_GET['return_id']);
         $action = mysqli_real_escape_string($con, $_GET['action']);
 
-        // First, retrieve return details to get product and quantity
+        // First, retrieve return details to get product, quantity, and order item details
         $query_return_details = "
             SELECT 
                 r.return_id, 
                 r.return_quantity, 
-                oi.pro_id 
+                oi.pro_id, 
+                oi.order_items_id,
+                oi.quantity as original_quantity
             FROM 
                 `returns` r
             JOIN 
@@ -48,6 +50,15 @@ if(isset($_GET['action']) && isset($_GET['return_id'])) {
                 WHERE pro_id = '{$return_details['pro_id']}'
             ";
             mysqli_query($con, $update_stock_query);
+
+            // Reduce quantity in order_items
+            $update_order_items_query = "
+                UPDATE order_items 
+                SET quantity = quantity - {$return_details['return_quantity']} 
+                WHERE order_items_id = '{$return_details['order_items_id']}'
+            ";
+            mysqli_query($con, $update_order_items_query);
+
         } else {
             // Reject return
             $update_return_query = "

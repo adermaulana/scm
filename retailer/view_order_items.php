@@ -15,7 +15,11 @@ if(isset($_SESSION['manufacturer_login']) || isset($_SESSION['admin_login']) || 
             VALUES 
             ('$order_id', '$order_item_id', '$return_quantity', '$return_reason')";
         
-        mysqli_query($con, $insert_return_query);
+		if(mysqli_query($con, $insert_return_query)) {
+            // Set success message in session
+            echo "<script> alert(\"Berhasil Ajukan Retur\"); </script>";
+			header('Refresh:0;url=view_my_orders.php');
+        }
     }
     
     $query_selectOrderItems = "SELECT *,order_items.quantity AS quantity FROM orders,order_items,products WHERE order_items.order_id='$order_id' AND order_items.pro_id=products.pro_id AND order_items.order_id=orders.order_id";
@@ -183,28 +187,53 @@ window.onclick = function(event) {
         <th>Harga Unit</th>
         <th>Jumlah</th>
         <th>Total Harga</th>
+        <th>Status</th>
         <th>Aksi</th>
     </tr>
     <?php 
     mysqli_data_seek($result_selectOrderItems, 0);
     while($row_selectOrderItems = mysqli_fetch_array($result_selectOrderItems)) { 
     ?>
-    <tr>
-        <td><?php echo $row_selectOrderItems['pro_name']; ?></td>
-        <td><?php echo $row_selectOrderItems['pro_price']; ?></td>
-        <td><?php echo $row_selectOrderItems['quantity']; ?></td>
-        <td><?php echo $row_selectOrderItems['quantity']*$row_selectOrderItems['pro_price']; ?></td>
-        <td>
-            <button class="return-action-btn" 
-                    onclick="openReturnModal(
-                        <?php echo $row_selectOrderItems['order_items_id']; ?>, 
-                        '<?php echo htmlspecialchars($row_selectOrderItems['pro_name']); ?>', 
-                        <?php echo $row_selectOrderItems['quantity']; ?>
-                    )">
-                Ajukan Retur
-            </button>
-        </td>
-    </tr>
+	<?php if ($row_selectOrderItems['status'] != 0): ?>
+		<tr>
+			<td><?php echo $row_selectOrderItems['pro_name']; ?></td>
+			<td><?php echo $row_selectOrderItems['pro_price']; ?></td>
+			<td><?php echo $row_selectOrderItems['quantity']; ?></td>
+			<td><?php echo $row_selectOrderItems['quantity']*$row_selectOrderItems['pro_price']; ?></td>
+			<?php if ($row_selectOrderItems['status'] != 0): ?>
+				<td>Selesai</td>
+			<?php else: ?>
+				<td>Pending</td>
+			<?php endif; ?>
+			<td>
+				<button class="return-action-btn" 
+						onclick="openReturnModal(
+							<?php echo $row_selectOrderItems['order_items_id']; ?>, 
+							'<?php echo htmlspecialchars($row_selectOrderItems['pro_name']); ?>', 
+							<?php echo $row_selectOrderItems['quantity']; ?>
+						)">
+					Ajukan Retur
+				</button>
+			</td>
+		</tr>
+	<?php else: ?>
+		<tr>
+			<td><?php echo $row_selectOrderItems['pro_name']; ?></td>
+			<td><?php echo $row_selectOrderItems['pro_price']; ?></td>
+			<td><?php echo $row_selectOrderItems['quantity']; ?></td>
+			<td><?php echo $row_selectOrderItems['quantity']*$row_selectOrderItems['pro_price']; ?></td>
+			<?php if ($row_selectOrderItems['status'] != 0): ?>
+				<td>Selesai</td>
+			<?php else: ?>
+				<td>Pending</td>
+			<?php endif; ?>
+			<td>
+				<button disabled class="return-action-btn" style="background-color:red !important;">
+					Belum Bisa Return
+				</button>
+			</td>
+		</tr>
+	<?php endif; ?>
     <?php } ?>
 </table>
     </section>
