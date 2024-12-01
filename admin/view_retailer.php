@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Retailer </title>
+	<title> Lihat Pengecer </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 	<script language="JavaScript">
 	function toggle(source) {
@@ -52,17 +52,17 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>View Retailer</h1>
+		<h1>Lihat Pengecer</h1>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData">
 			<tr>
 				<th> <input type="checkbox" onClick="toggle(this)" /> </th>
-				<th>Sr. No.</th>
+				<th>No.</th>
 				<th>Username</th>
-				<th>Area Code</th>
-				<th>Phone</th>
+				<th>Kode Area</th>
+				<th>Telepon</th>
 				<th>Email</th>
-				<th>Address</th>
+				<th>Alamat</th>
 				<th> Edit </th>
 			</tr>
 			<?php $i=1; while($row_selectRetailer = mysqli_fetch_array($result_selectRetailer)) { ?>
@@ -78,7 +78,7 @@
 			</tr>
 			<?php $i++; } ?>
 		</table>
-		<input type="submit" value="Delete" class="submit_button"/>
+		<input type="submit" value="Hapus" class="submit_button"/>
 		</form>
 	</section>
 	<?php

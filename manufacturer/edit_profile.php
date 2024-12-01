@@ -63,7 +63,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Edit Profile </title>
+	<title> Ubah Profil </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -73,24 +73,24 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>Edit Profile</h1>
+		<h1>Ubah Profil</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="manufacturer:name">Name</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:name" name="txtManufacturerName" placeholder="Name" value="<?php echo $row_selectMan['man_name']; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
+			<div class="label-block"> <label for="manufacturer:name">Nama</label> </div>
+			<div class="input-box"> <input type="text" id="manufacturer:name" name="txtManufacturerName" placeholder="Nama" value="<?php echo $row_selectMan['man_name']; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="manufacturer:email">Email</label> </div>
 			<div class="input-box"> <input type="text" id="manufacturer:email" name="txtManufacturerEmail" placeholder="Email" value="<?php echo $row_selectMan['man_email']; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="manufacturer:phone">Phone</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:phone" name="txtManufacturerPhone" placeholder="Phone" value="<?php echo $row_selectMan['man_phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
+			<div class="label-block"> <label for="manufacturer:phone">Telepon</label> </div>
+			<div class="input-box"> <input type="text" id="manufacturer:phone" name="txtManufacturerPhone" placeholder="Telepon" value="<?php echo $row_selectMan['man_phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
-			<a href="change_password.php"><input type="button" value="Change Password" class="submit_button" /></a>
-			<input type="submit" value="Update Profile" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<a href="change_password.php"><input type="button" value="Ubah Password" class="submit_button" /></a>
+			<input type="submit" value="Ubah Profil" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

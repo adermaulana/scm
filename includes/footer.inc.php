@@ -2,4 +2,4 @@
 </tr>
 </table>
 
-<footer>Supply Chain Management Makananan.</footer>
+<footer>Supply Chain Management Makanan.</footer>

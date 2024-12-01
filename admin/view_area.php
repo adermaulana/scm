@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Area </title>
+	<title> Lihat Area </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 	<script language="JavaScript">
 	function toggle(source) {
@@ -52,14 +52,14 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>View Area</h1>
+		<h1>Lihat Area</h1>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData">
 			<tr>
 				<th> <input type="checkbox" onClick="toggle(this)" /> </th>
-				<th>Sr. No.</th>
-				<th>Area Name</th>
-				<th>Area Code</th>
+				<th>No.</th>
+				<th>Nama Area</th>
+				<th>Kode Area</th>
 				<th> Edit </th>
 			</tr>
 			<?php $i=1; while($row_selectArea = mysqli_fetch_array($result_selectArea)) { ?>
@@ -72,8 +72,8 @@
 			</tr>
 			<?php $i++; } ?>
 		</table>
-		<input type="submit" value="Delete" class="submit_button"/>
-		<a href="add_area.php"><input type="button" value="+ Add Area" class="submit_button"/></a>
+		<input type="submit" value="Hapus" class="submit_button"/>
+		<a href="add_area.php"><input type="button" value="+ Tambah Area" class="submit_button"/></a>
 		</form>
 	</section>
 	<?php

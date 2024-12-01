@@ -17,7 +17,7 @@
 							$result_selectOrder = mysqli_query($con,$query_selectOrder);
 							$row_selectOrder = mysqli_fetch_array($result_selectOrder);
 							if(empty($row_selectOrder)){
-							   $error = "* No order was found with this ID";
+							   $error = "* Tidak ada order pada id ini";
 							}
 							else {
 								mysqli_data_seek($result_selectOrder,0);
@@ -33,7 +33,7 @@
 						$result_selectOrder = mysqli_query($con,$query_selectOrder);
 						$row_selectOrder = mysqli_fetch_array($result_selectOrder);
 						if(empty($row_selectOrder)){
-						   $error = "* No order was found of the selected Retailer";
+						   $error = "* Tidak ada order dengan pengecer ini";
 						}
 						else {
 							mysqli_data_seek($result_selectOrder,0);
@@ -45,7 +45,7 @@
 						$result_selectOrder = mysqli_query($con,$query_selectOrder);
 						$row_selectOrder = mysqli_fetch_array($result_selectOrder);
 						if(empty($row_selectOrder)){
-						   $error = "* No order was found with the selected Date";
+						   $error = "* Tidak ada order pada tanggal ini";
 						}
 						else {
 							mysqli_data_seek($result_selectOrder,0);
@@ -63,7 +63,7 @@
 						$result_selectOrder = mysqli_query($con,$query_selectOrder);
 						$row_selectOrder = mysqli_fetch_array($result_selectOrder);
 						if(empty($row_selectOrder)){
-						   $error = "* No order was found";
+						   $error = "* Tidak ada order ditemukan";
 						}
 						else {
 							mysqli_data_seek($result_selectOrder,0);
@@ -80,7 +80,7 @@
 						$result_selectOrder = mysqli_query($con,$query_selectOrder);
 						$row_selectOrder = mysqli_fetch_array($result_selectOrder);
 						if(empty($row_selectOrder)){
-						   $error = "* No order was found";
+						   $error = "* Tidak ada order ditemukan";
 						}
 						else {
 							mysqli_data_seek($result_selectOrder,0);
@@ -88,10 +88,12 @@
 					}
 					else {
 						$error = "* Please enter the data to search for.";
+						header('Location:view_orders.php');
 					}
 				}
 				else {
 					$error = "Please choose an option to search for.";
+					header('Location:view_orders.php');
 				}
 			}
 			else {
@@ -132,22 +134,22 @@
 	<section>
 		<h1>Orders</h1>
 		<form action="" method="POST" class="form">
-			Search By: 
+			Cari berdasarkan: 
 			<div class="input-box">
 			<select name="cmbFilter" id="cmbFilter">
-			<option value="" disabled selected>-- Search By --</option>
+			<option value="" disabled selected>-- Cari Berdasarkan --</option>
 			<option value="id"> Id </option>
-			<option value="retailer"> Retailer </option>
-			<option value="date"> Date </option>
+			<option value="retailer"> Pengecer </option>
+			<option value="date"> Tanggal </option>
 			<option value="status"> Status </option>
-			<option value="approved"> Approval </option>
+			<option value="approved"> Disetujui </option>
 			</select>
 			</div>
 			
 			<div class="input-box"> <input type="text" name="txtId" id="txtId" style="display:none;" /> </div>
 			<div class="input-box">
 			<select name="cmbRetailer" id="cmbRetailer" style="display:none;">
-				<option value="" disabled selected>-- Select Retailer --</option>
+				<option value="" disabled selected>-- Pilih Pengecer --</option>
 				<?php while($rowSelectRetailer = mysqli_fetch_array($resultSelectRetailer)) { ?>
 				<option value="<?php echo $rowSelectRetailer['retailer_id']; ?>"><?php echo $rowSelectRetailer['area_code']." (".$rowSelectRetailer['area_name'].")"; ?></option>
 				<?php } ?>
@@ -156,31 +158,31 @@
 			<div class="input-box"> <input type="text" id="datepicker" name="txtDate" style="display:none;"/> </div>
 			<div class="input-box">
 			<select name="cmbStatus" id="cmbStatus" style="display:none;">
-				<option value="" disabled selected>-- Select Option --</option>
+				<option value="" disabled selected>-- Pilih --</option>
 				<option value="zero"> Pending </option>
-				<option value="1"> Completed </option>
+				<option value="1"> Selesai </option>
 			</select>
 			</div>
 			<div class="input-box">
 			<select name="cmbApproved" id="cmbApproved" style="display:none;">
-				<option value="" disabled selected>-- Select Option --</option>
-				<option value="zero"> Not Approved </option>
-				<option value="1"> Approved </option>
+			<option value="" disabled selected>-- Pilih --</option>
+				<option value="zero"> Tidak Disetujui </option>
+				<option value="1"> Disetujui </option>
 			</select>
 			</div>
 			
-			<input type="submit" class="submit_button" value="Search" /> <span class="error_message"> <?php echo $error; ?> </span>
+			<input type="submit" class="submit_button" value="Cari" /> <span class="error_message"> <?php echo $error; ?> </span>
 		</form>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData" style="margin-top:20px;">
 			<tr>
 				<th> Order ID </th>
-				<th> Retailer </th>
-				<th> Date </th>
-				<th> Approved Status </th>
-				<th> Order Status </th>
-				<th> Details </th>
-				<th> Confirm </th>
+				<th> Pengecer </th>
+				<th> Tanggal </th>
+				<th> Status Disetujui </th>
+				<th> Status Order </th>
+				<th> Detail </th>
+				<th> Konfirmasi </th>
 				<th> Generate Invoice </th>
 			</tr>
 			<?php $i=1; while($row_selectOrder = mysqli_fetch_array($result_selectOrder)) { ?>
@@ -193,10 +195,10 @@
 				<td>
 					<?php
 						if($row_selectOrder['approved'] == 0) {
-							echo "Not Approved";
+							echo "Tidak Disetujui";
 						}
 						else {
-							echo "Approved";
+							echo "Disetujui";
 						}
 					?>
 				</td>
@@ -206,7 +208,7 @@
 							echo "Pending";
 						}
 						else {
-							echo "Completed";
+							echo "Selesai";
 						}
 					?>
 				</td>

@@ -27,10 +27,10 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Order Details</h1>
+		<h1>Detail Order</h1>
 		<table class="table_infoFormat">
 		<tr>
-			<td> Order No: </td>
+			<td> No Order: </td>
 			<td> <?php echo $order_id; ?> </td>
 		</tr>
 		<tr>
@@ -41,23 +41,23 @@
 					echo "Pending";
 				}
 				else {
-					echo "Completed";
+					echo "Selesai";
 				}
 			?>
 			</td>
 		</tr>
 		<tr>
-			<td> Date: </td>
+			<td> Tanggal: </td>
 			<td> <?php echo date("d-m-Y",strtotime($row_selectManOrder['date'])); ?> </td>
 		</tr>
 		</table>
 		<form action="" method="POST" class="form">
 		<table class="table_invoiceFormat">
 			<tr>
-				<th> Products </th>
-				<th> Unit Price </th>
-				<th> Quantity </th>
-				<th> Amount </th>
+				<th> Produk </th>
+				<th> Harga Unit </th>
+				<th> Jumlah </th>
+				<th> Total Harga </th>
 			</tr>
 			<?php $i=1; while($row_selectManOrderItems = mysqli_fetch_array($result_selectManOrderItems)) { ?>
 			<tr>
@@ -68,7 +68,7 @@
 			</tr>
 			<?php $i++; } ?>
 			<tr style="height:40px;vertical-align:bottom;">
-				<td colspan="3" style="text-align:right;"> Total Amount: </td>
+				<td colspan="3" style="text-align:right;"> Grand Total: </td>
 				<td>
 				<?php
 					mysqli_data_seek($result_selectManOrderItems,0);

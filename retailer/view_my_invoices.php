@@ -59,10 +59,12 @@
 					}
 					else {
 						$error = "* Please enter the data to search for.";
+						header('Location:view_my_invoices.php');
 					}
 				}
 				else {
 					$error = "Please choose an option to search for.";
+					header('Location:view_my_invoices.php');
 				}
 			}
 			else {
@@ -78,7 +80,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Invoices </title>
+	<title> Lihat Invoice </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 	<link rel="stylesheet" href="css/smoothness/jquery-ui.css">
 	<script type="text/javascript" src="../includes/jquery.js"> </script>
@@ -101,32 +103,32 @@
 		include("../includes/aside_retailer.inc.php");
 	?>
 	<section>
-		<h1>Invoices</h1>
+		<h1>Invoice</h1>
 		<form action="" method="POST" class="form">
-		Search By: 
+		Cari Berdasarkan: 
 		<div class="input-box">
 		<select name="cmbFilter" id="cmbFilter">
-		<option value="" disabled selected>-- Search By --</option>
-		<option value="invoiceId">  Invoice Id </option>
-		<option value="orderId"> Order ID </option>
-		<option value="date"> Date </option>
+		<option value="" disabled selected>-- Cari Berdasarkan --</option>
+		<option value="invoiceId">  Id Invoice </option>
+		<option value="orderId"> Id Order </option>
+		<option value="date"> Tanggal </option>
 		</select>
 		</div>
 		
 		<div class="input-box"> <input type="text" name="txtInvoiceId" id="txtInvoiceId" style="display:none;" /> </div>
 		<div class="input-box"> <input type="text" name="txtOrderId" id="txtOrderId" style="display:none;" /> </div>
 		<div class="input-box"> <input type="text" id="datepicker" name="txtDate" style="display:none;"/> </div>
-		<input type="submit" class="submit_button" value="Search" /> <span class="error_message"> <?php echo $error; ?> </span>
+		<input type="submit" class="submit_button" value="Cari" /> <span class="error_message"> <?php echo $error; ?> </span>
 		</form>
 	
 		<form action="" method="POST" class="form">
 		<table class="table_displayData" style="margin-top:20px;">
 			<tr>
-				<th> Invoice ID </th>
-				<th> Date </th>
-				<th> Order ID </th>
-				<th> Total Amount </th>
-				<th> Details </th>
+				<th> ID Invoice </th>
+				<th> Tanggal </th>
+				<th> ID Order </th>
+				<th> Total Harga </th>
+				<th> Detail </th>
 			</tr>
 			<?php while($row_selectInvoice = mysqli_fetch_array($result_selectInvoice)) { ?>
 			<tr>

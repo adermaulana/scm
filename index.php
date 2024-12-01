@@ -78,10 +78,10 @@
 		<div class="input-box"> <input type="password" id="login:password" name="txtPassword" placeholder="Password" /> </div>
 	</li>
 	<li>
-		<div class="label-block"> <label for="login:type">Login Type</label> </div>
+		<div class="label-block"> <label for="login:type">Role</label> </div>
 		<div class="input-box">
 		<select name="login_type" id="login:type">
-		<option value="" disabled selected>-- Select Type --</option>
+		<option value="" disabled selected>-- Pilih Role --</option>
 		<option value="retailer">Pengecer</option>
 		<option value="manufacturer">Pabrik</option>
 		<option value="admin">Admin</option>

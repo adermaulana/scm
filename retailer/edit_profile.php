@@ -57,7 +57,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Edit Profile </title>
+	<title> Edit Profil </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -67,20 +67,20 @@
 		include("../includes/aside_retailer.inc.php");
 	?>
 	<section>
-		<h1>Edit Profile</h1>
+		<h1>Edit Profil</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="retailer:phone">Phone</label> </div>
-			<div class="input-box"> <input type="text" id="retailer:phone" name="txtRetailerPhone" placeholder="Phone" value="<?php echo $row_selectRetailer['phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
+			<div class="label-block"> <label for="retailer:phone">Telepon</label> </div>
+			<div class="input-box"> <input type="text" id="retailer:phone" name="txtRetailerPhone" placeholder="Telepon" value="<?php echo $row_selectRetailer['phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="retailer:email">Email</label> </div>
 			<div class="input-box"> <input type="text" id="retailer:email" name="txtRetailerEmail" placeholder="Email" value="<?php echo $row_selectRetailer['email']; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:address">Address</label> </div>
-			<div class="input-box"> <textarea type="text" id="retailer:address" name="txtRetailerAddress" placeholder="Address"><?php echo $row_selectRetailer['address']; ?></textarea> </div>
+			<div class="label-block"> <label for="retailer:address">Alamat</label> </div>
+			<div class="input-box"> <textarea type="text" id="retailer:address" name="txtRetailerAddress" placeholder="Alamat"><?php echo $row_selectRetailer['address']; ?></textarea> </div>
 		</li>
 		<li>
 			<a href="change_password.php"><input type="button" value="Change Password" class="submit_button" /></a>

@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Category </title>
+	<title>Lihat Kategori</title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 	<script language="JavaScript">
 	function toggle(source) {
@@ -52,14 +52,14 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>View Category</h1>
+		<h1>Lihat Kategori</h1>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData">
 			<tr>
 				<th> <input type="checkbox" onClick="toggle(this)" /> </th>
-				<th>Sr. No.</th>
-				<th>Name</th>
-				<th>Description</th>
+				<th>No.</th>
+				<th>Nama</th>
+				<th>Deskripsi</th>
 				<th> Edit </th>
 			</tr>
 			<?php $i=1; while($row_selectCategory = mysqli_fetch_array($result_selectCategory)) { ?>
@@ -72,8 +72,8 @@
 			</tr>
 			<?php $i++; } ?>
 		</table>
-		<input type="submit" value="Delete" class="submit_button"/>
-		<a href="add_category.php"><input type="button" value="+ Add Category" class="submit_button"/></a>
+		<input type="submit" value="Hapus" class="submit_button"/>
+		<a href="add_category.php"><input type="button" value="+ Tambah Kategori" class="submit_button"/></a>
 		</form>
 	</section>
 	<?php

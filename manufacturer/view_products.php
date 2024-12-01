@@ -47,17 +47,17 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>View Products</h1>
+		<h1>Lihat Produk</h1>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData">
 			<tr>
 				<th> <input type="checkbox" onClick="toggle(this)" /> </th>
-				<th> Code </th>
-				<th> Name </th>
-				<th> Price </th>
+				<th> Kode </th>
+				<th> Nama </th>
+				<th> Harga </th>
 				<th> Unit </th>
-				<th> Category </th>
-				<th> Quantity </th>
+				<th> Kategori </th>
+				<th> Jumlah </th>
 				<th> Edit </th>
 			</tr>
 			<?php $i=1; while($row_selectProducts = mysqli_fetch_array($result_selectProducts)) { ?>
@@ -73,7 +73,7 @@
 			</tr>
 			<?php $i++; } ?>
 		</table>
-		<input type="submit" value="Delete" class="submit_button"/>
+		<input type="submit" value="Hapus" class="submit_button"/>
 		</form>
 	</section>
 	<?php

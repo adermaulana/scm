@@ -88,7 +88,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Add Product </title>
+	<title> UBah Produk </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -98,22 +98,22 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Edit Product</h1>
+		<h1>Ubah Produk</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="product:name">Product Name</label> </div>
+			<div class="label-block"> <label for="product:name">Nama Produk</label> </div>
 			<div class="input-box"> <input type="text" id="product:name" name="txtProductName" placeholder="Product Name" value="<?php echo $row_selectProductDetails['pro_name']; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="product:price">Price</label> </div>
+			<div class="label-block"> <label for="product:price">Harga</label> </div>
 			<div class="input-box"> <input type="text" id="product:price" name="txtProductPrice" placeholder="Price" value="<?php echo $row_selectProductDetails['pro_price']; ?>" required /> </div> <span class="error_message"><?php echo $priceErr; ?></span>
 		</li>
 		<li>
-		<div class="label-block"> <label for="product:unit">Unit Type</label> </div>
+		<div class="label-block"> <label for="product:unit">Tipe Unit</label> </div>
 		<div class="input-box">
 		<select name="cmbProductUnit" id="product:unit">
-			<option value="" disabled selected>--- Select Unit ---</option>
+			<option value="" disabled selected>--- Piih Unit ---</option>
 			<?php while($row_selectUnit = mysqli_fetch_array($result_selectUnit)) { ?>
 			<option value="<?php echo $row_selectUnit["id"]; ?>" <?php if($row_selectProductDetails['unit'] == $row_selectUnit["id"]){echo "selected";} ?>> <?php echo $row_selectUnit["unit_name"]; ?> </option>
 			<?php } ?>
@@ -121,10 +121,10 @@
 		</div>
 		</li>
 		<li>
-		<div class="label-block"> <label for="product:category">Category</label> </div>
+		<div class="label-block"> <label for="product:category">Kategori</label> </div>
 		<div class="input-box">
 		<select name="cmbProductCategory" id="product:category">
-			<option value="" disabled selected>--- Select Category ---</option>
+			<option value="" disabled selected>--- Pilih Kategori ---</option>
 			<?php while($row_selectCategory = mysqli_fetch_array($result_selectCategory)) { ?>
 			<option value="<?php echo $row_selectCategory["cat_id"]; ?>" <?php if($row_selectProductDetails['pro_cat'] == $row_selectCategory["cat_id"]){echo "selected";} ?>> <?php echo $row_selectCategory["cat_name"]; ?> </option>
 			<?php } ?>
@@ -132,16 +132,16 @@
 		</div>
 		</li>
 		<li>
-			<div class="label-block"> <label for="product:stock">Stock Management</label> </div>
-			<input type="radio" name="rdbStock" value="1">Enable
-			<input type="radio" name="rdbStock" value="2">Disable
+			<div class="label-block"> <label for="product:stock">Manajemen Stok</label> </div>
+			<input type="radio" name="rdbStock" value="1">Aktif
+			<input type="radio" name="rdbStock" value="2">Tidak Aktif
 		</li>
 		<li>
-			<div class="label-block"> <label for="product:description">Description</label> </div>
-			<div class="input-box"> <textarea type="text" id="product:description" name="txtProductDescription" placeholder="Description"><?php echo $row_selectProductDetails['pro_desc']; ?></textarea> </div>
+			<div class="label-block"> <label for="product:description">Deskripsi</label> </div>
+			<div class="input-box"> <textarea type="text" id="product:description" name="txtProductDescription" placeholder="Deskripsi"><?php echo $row_selectProductDetails['pro_desc']; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Update Product" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Update Produk" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

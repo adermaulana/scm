@@ -78,7 +78,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Edit Manufacturer </title>
+	<title> Ubah Pabrik </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -88,27 +88,27 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Edit Manufacturer</h1>
+		<h1>Ubah Pabrik</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="manufacturer:name">Name</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:name" name="txtManufacturerName" placeholder="Name" value="<?php echo $row_selectManDetails['man_name']; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
+			<div class="label-block"> <label for="manufacturer:name">Nama</label> </div>
+			<div class="input-box"> <input type="text" id="manufacturer:name" name="txtManufacturerName" placeholder="Nama" value="<?php echo $row_selectManDetails['man_name']; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="manufacturer:email">Email</label> </div>
 			<div class="input-box"> <input type="text" id="manufacturer:email" name="txtManufacturerEmail" placeholder="Email" value="<?php echo $row_selectManDetails['man_email']; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="manufacturer:phone">Phone</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:phone" name="txtManufacturerPhone" placeholder="Phone" value="<?php echo $row_selectManDetails['man_phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
+			<div class="label-block"> <label for="manufacturer:phone">Telepon</label> </div>
+			<div class="input-box"> <input type="text" id="manufacturer:phone" name="txtManufacturerPhone" placeholder="Telepon" value="<?php echo $row_selectManDetails['man_phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="manufacturer:username">Username</label> </div>
 			<div class="input-box"> <input type="text" id="manufacturer:username" name="txtManufacturerUname" placeholder="Username" value="<?php echo $row_selectManDetails['username']; ?>" required /> </div> <span class="error_message"><?php echo $usernameErr; ?></span>
 		</li>
 		<li>
-			<input type="submit" value="Update Manufacturer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Update Pabrik" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

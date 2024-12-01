@@ -17,7 +17,7 @@
 							$result_selectInvoice = mysqli_query($con,$query_selectInvoice);
 							$row_selectInvoice = mysqli_fetch_array($result_selectInvoice);
 							if(empty($row_selectInvoice)){
-							   $error = "* No invoice was found with this ID";
+							   $error = "* Tidak ada invoice pada id ini";
 							}
 							else {
 								mysqli_data_seek($result_selectInvoice,0);
@@ -35,7 +35,7 @@
 							$result_selectInvoice = mysqli_query($con,$query_selectInvoice);
 							$row_selectInvoice = mysqli_fetch_array($result_selectInvoice);
 							if(empty($row_selectInvoice)){
-							   $error = "* No invoice was found with this ID";
+							   $error = "* Tidak ada invoice pada id ini";
 							}
 							else {
 								mysqli_data_seek($result_selectInvoice,0);
@@ -51,7 +51,7 @@
 						$result_selectInvoice = mysqli_query($con,$query_selectInvoice);
 						$row_selectInvoice = mysqli_fetch_array($result_selectInvoice);
 						if(empty($row_selectInvoice)){
-						   $error = "* No invoice was found of the selected Retailer";
+						   $error = "* Tidak ada invoice pada pengecer ini";
 						}
 						else {
 							mysqli_data_seek($result_selectInvoice,0);
@@ -63,7 +63,7 @@
 						$result_selectInvoice = mysqli_query($con,$query_selectInvoice);
 						$row_selectInvoice = mysqli_fetch_array($result_selectInvoice);
 						if(empty($row_selectInvoice)){
-						   $error = "* No invoice was found with the selected Date";
+						   $error = "* Tidak ada invoice pada tanggal ini";
 						}
 						else {
 							mysqli_data_seek($result_selectInvoice,0);
@@ -72,10 +72,12 @@
 					}
 					else {
 						$error = "* Please enter the data to search for.";
+						header('Location:view_invoice.php');
 					}
 				}
 				else {
 					$error = "Please choose an option to search for.";
+					header('Location:view_invoice.php');
 				}
 			}
 			else {
@@ -114,16 +116,16 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>Invoices</h1>
+		<h1>Invoice</h1>
 		<form action="" method="POST" class="form">
-		Search By: 
+		Cari Berdasarkan: 
 		<div class="input-box">
 		<select name="cmbFilter" id="cmbFilter">
-		<option value="" disabled selected>-- Search By --</option>
-		<option value="invoiceId">  Invoice Id </option>
-		<option value="orderId"> Order ID </option>
-		<option value="retailer"> Retailer </option>
-		<option value="date"> Date </option>
+		<option value="" disabled selected>-- Cari Berdasarkan --</option>
+		<option value="invoiceId">  Id Invoice </option>
+		<option value="orderId"> Id Order </option>
+		<option value="retailer"> Pengecer </option>
+		<option value="date"> Tanggal </option>
 		</select>
 		</div>
 		
@@ -131,25 +133,25 @@
 		<div class="input-box"> <input type="text" name="txtOrderId" id="txtOrderId" style="display:none;" /> </div>
 		<div class="input-box">
 		<select name="cmbRetailer" id="cmbRetailer" style="display:none;">
-			<option value="" disabled selected>-- Select Retailer --</option>
+			<option value="" disabled selected>-- Pilih Pengecer --</option>
 			<?php while($rowSelectRetailer = mysqli_fetch_array($resultSelectRetailer)) { ?>
 			<option value="<?php echo $rowSelectRetailer['retailer_id']; ?>"><?php echo $rowSelectRetailer['area_code']." (".$rowSelectRetailer['area_name'].")"; ?></option>
 			<?php } ?>
 		</select>
 		</div>
 		<div class="input-box"> <input type="text" id="datepicker" name="txtDate" style="display:none;"/> </div>
-		<input type="submit" class="submit_button" value="Search" /> <span class="error_message"> <?php echo $error; ?> </span>
+		<input type="submit" class="submit_button" value="Cari" /> <span class="error_message"> <?php echo $error; ?> </span>
 		</form>
 	
 		<form action="" method="POST" class="form">
 		<table class="table_displayData" style="margin-top:20px;">
 			<tr>
-				<th> Invoice ID </th>
-				<th> Retailer </th>
-				<th> Date </th>
-				<th> Order ID </th>
-				<th> Total Amount </th>
-				<th> Details </th>
+				<th> ID Invoice </th>
+				<th> Pengecer </th>
+				<th> Tanggal </th>
+				<th> ID Order </th>
+				<th> Total Harga </th>
+				<th> Detail </th>
 			</tr>
 			<?php while($row_selectInvoice = mysqli_fetch_array($result_selectInvoice)) { ?>
 			<tr>

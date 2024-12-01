@@ -52,7 +52,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Update Unit </title>
+	<title> Ubah Unit </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -62,19 +62,19 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>Update Unit</h1>
+		<h1>Ubah Unit</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="unitName">Unit Name</label> </div>
-			<div class="input-box"> <input type="text" id="unitName" name="txtUnitName" placeholder="Unit Name" value="<?php echo $row_selectUnitDetails['unit_name']; ?>" required /> </div> <span class="error_message"><?php echo $unitNameErr; ?></span>
+			<div class="label-block"> <label for="unitName">Nama Unit</label> </div>
+			<div class="input-box"> <input type="text" id="unitName" name="txtUnitName" placeholder="Nama Unit" value="<?php echo $row_selectUnitDetails['unit_name']; ?>" required /> </div> <span class="error_message"><?php echo $unitNameErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="unitDetails">Details</label> </div>
-			<div class="input-box"><textarea id="unitDetails" name="txtunitDetails" placeholder="Details"><?php echo $row_selectUnitDetails['unit_details']; ?></textarea> </div>
+			<div class="label-block"> <label for="unitDetails">Detail</label> </div>
+			<div class="input-box"><textarea id="unitDetails" name="txtunitDetails" placeholder="Detail"><?php echo $row_selectUnitDetails['unit_details']; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Update Unit" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Ubah Unit" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

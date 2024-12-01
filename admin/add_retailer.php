@@ -82,7 +82,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Add Retailer </title>
+	<title> Tambah Pengecer </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -92,7 +92,7 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Add Retailer</h1>
+		<h1>Tambah Pengecer</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
@@ -104,10 +104,10 @@
 			<div class="input-box"> <input type="password" id="retailer:password" name="txtRetailerPassword" placeholder="Password" required /> </div> <span class="error_message"><?php echo $passwordErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:areaCode">Area Code</label> </div>
+			<div class="label-block"> <label for="retailer:areaCode">Kode Area</label> </div>
 			<div class="input-box">
 				<select name="cmbAreaCode" id="retailer:areaCode">
-					<option value="" disabled selected>--- Select Area Code ---</option>
+					<option value="" disabled selected>--- Pilih Kode Area ---</option>
 			<?php while($row_selectArea = mysqli_fetch_array($result_selectArea)) { ?>
 			<option value="<?php echo $row_selectArea["area_id"]; ?>"><?php echo $row_selectArea["area_code"]." (".$row_selectArea["area_name"].")"; ?></option>
 			<?php } ?>
@@ -115,19 +115,19 @@
 			 </div>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:phone">Phone</label> </div>
-			<div class="input-box"> <input type="text" id="retailer:phone" name="txtRetailerPhone" placeholder="Phone" value="<?php echo $phoneHolder; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
+			<div class="label-block"> <label for="retailer:phone">Telepon</label> </div>
+			<div class="input-box"> <input type="text" id="retailer:phone" name="txtRetailerPhone" placeholder="Telepon" value="<?php echo $phoneHolder; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="retailer:email">Email</label> </div>
 			<div class="input-box"> <input type="text" id="retailer:email" name="txtRetailerEmail" placeholder="Email" value="<?php echo $emailHolder; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:address">Address</label> </div>
-			<div class="input-box"> <textarea type="text" id="retailer:address" name="txtRetailerAddress" placeholder="Address"><?php echo $addressHolder; ?></textarea> </div>
+			<div class="label-block"> <label for="retailer:address">Alamat</label> </div>
+			<div class="input-box"> <textarea type="text" id="retailer:address" name="txtRetailerAddress" placeholder="Alamat"><?php echo $addressHolder; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Add Retailer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Tambah Pengecer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

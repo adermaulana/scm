@@ -68,7 +68,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Add Distributor </title>
+	<title>Tambah Distributor</title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -78,27 +78,27 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Add Distributor</h1>
+		<h1>Tambah Distributor</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="distributor:name">Name</label> </div>
-			<div class="input-box"> <input type="text" id="distributor:name" name="txtDistributorName" placeholder="Name" value="<?php echo $nameHolder; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
+			<div class="label-block"> <label for="distributor:name">Nama</label> </div>
+			<div class="input-box"> <input type="text" id="distributor:name" name="txtDistributorName" placeholder="Nama" value="<?php echo $nameHolder; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="distributor:email">Email</label> </div>
 			<div class="input-box"> <input type="text" id="distributor:email" name="txtDistributorEmail" placeholder="Email" value="<?php echo $emailHolder; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="distributor:phone">Phone</label> </div>
-			<div class="input-box"> <input type="text" id="distributor:phone" name="txtDistributorPhone" placeholder="Phone" value="<?php echo $phoneHolder; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
+			<div class="label-block"> <label for="distributor:phone">Telepon</label> </div>
+			<div class="input-box"> <input type="text" id="distributor:phone" name="txtDistributorPhone" placeholder="Telepon" value="<?php echo $phoneHolder; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="distributor:address">Address</label> </div>
-			<div class="input-box"> <textarea type="text" id="distributor:address" name="txtDistributorAddress" placeholder="Address"><?php echo $addressHolder; ?></textarea> </div>
+			<div class="label-block"> <label for="distributor:address">Alamat</label> </div>
+			<div class="input-box"> <textarea type="text" id="distributor:address" name="txtDistributorAddress" placeholder="Alamat"><?php echo $addressHolder; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Add Distributor" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Tambah Distributor" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

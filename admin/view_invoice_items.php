@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Invoice Details </title>
+	<title> Lihat Detail Invoice </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 	<script type="text/javascript">     
         function PrintDiv() {
@@ -43,18 +43,18 @@
 	?>
 	<section>
 	<div id="divToPrint" style="clear:both;" >
-		<h1 style="text-align:center;">Sales Invoice</h1>
+		<h1 style="text-align:center;">Invoice Penjualan</h1>
 		<table class="table_infoFormat">
 		<tr>
-			<td><b> Invoice No: </b></td>
+			<td><b> No Invoice: </b></td>
 			<td> <?php echo $rowSelectInvoice['invoice_id']; ?> </td>
 		</tr>
 		<tr>
-			<td><b> Order No: </b></td>
+			<td><b> No Order: </b></td>
 			<td> <?php echo $rowSelectInvoice['order_id']; ?> </td>
 		</tr>
 		<tr>
-			<td><b> Retailer: </b></td>
+			<td><b> Pengecer: </b></td>
 			<td> <?php echo $rowSelectInvoice['area_code']; ?> </td>
 		</tr>
 		<tr>
@@ -62,18 +62,18 @@
 			<td> <?php echo $rowSelectInvoice['dist_name']; ?> </td>
 		</tr>
 		<tr>
-			<td><b> Date: </b></td>
+			<td><b> Tanggal: </b></td>
 			<td> <?php echo date("d-m-Y",strtotime($rowSelectInvoice['date'])); ?> </td>
 		</tr>
 		</table>
 		<form action="" method="POST" class="form">
 		<table class="table_invoiceFormat" style="margin-top:50px;">
 			<tr>
-				<th style="padding-right:25px;"> Sr. No. </th>
-				<th style="padding-right:150px;"> Products </th>
-				<th style="padding-right:30px;"> Unit Price </th>
-				<th style="padding-right:30px;"> Quantity </th>
-				<th> Amount </th>
+				<th style="padding-right:25px;"> No. </th>
+				<th style="padding-right:150px;"> Produk </th>
+				<th style="padding-right:30px;"> Harga Unit </th>
+				<th style="padding-right:30px;"> Jumlah </th>
+				<th> Total Harga </th>
 			</tr>
 			<?php $i=1; while($rowInvoiceItems = mysqli_fetch_array($resultInvoiceItems)) { ?>
 			<tr>
@@ -95,7 +95,7 @@
 				</td>
 			</tr>
 		</table><br/><br/>
-		<b>Comments:</b> <br/> <?php echo $rowSelectInvoice['comments']; ?>
+		<b>Catatan:</b> <br/> <?php echo $rowSelectInvoice['comments']; ?>
 		<br/><br/><br/><br/><br/><br/>
 			<p id="signature" style="float:right;display:none;">(Authorized Signatory)</p>
 			<p id="footer" style="clear:both;display:none;padding-bottom:20px;text-align:center;">Thank you for your Bussiness!</p>

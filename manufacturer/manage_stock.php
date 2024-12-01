@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Admin: Home</title>
+	<title> Pabrik: Home</title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -44,14 +44,14 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>Manage Stock</h1>
+		<h1>Atur Stok</h1>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData" style="margin-top:20px;">
 			<tr>
-				<th> Product ID </th>
-				<th> Name </th>
+				<th> ID Produk </th>
+				<th> Nama </th>
 				<th> Unit </th>
-				<th> Quantity </th>
+				<th> Jumlah </th>
 			</tr>
 			<?php while($rowSelectProduct = mysqli_fetch_array($resultSelectProduct)){ ?>
 			<tr>
@@ -62,7 +62,7 @@
 			</tr>
 			<?php } ?>
 		</table>
-			<input id="btnSubmit" type="submit" value="Update Stock" class="submit_button" />
+			<input id="btnSubmit" type="submit" value="Ubah Stok" class="submit_button" />
 		</form>
 	</section>
 	<?php

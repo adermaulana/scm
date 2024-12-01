@@ -34,17 +34,17 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Welcome Admin</h1>
+		<h1>Selamat Datang, Admin</h1>
 		<article>
-			<h2>Recently Added Retialers</h2>
+			<h2>Pengecer yang baru ditambahkan</h2>
 			<table class="table_displayData">
 				<tr>
-					<th>Sr. No.</th>
+					<th>No.</th>
 					<th>Username</th>
-					<th>Area Code</th>
-					<th>Phone</th>
+					<th>Kode Area</th>
+					<th>Telepon</th>
 					<th>Email</th>
-					<th>Address</th>
+					<th>Alamat</th>
 				</tr>
 				<?php $i=1; while($row_selectRetailer = mysqli_fetch_array($result_selectRetailer)) { ?>
 				<tr>
@@ -60,13 +60,13 @@
 		</article>
 		
 		<article>
-			<h2>Recently Added Manufacturers</h2>
+			<h2>Pabrik yang baru ditambahkan</h2>
 			<table class="table_displayData">
 			<tr>
-				<th>Sr. No.</th>
-				<th>Name</th>
+				<th>No.</th>
+				<th>Nama</th>
 				<th>Email</th>
-				<th>Phone</th>
+				<th>Telepon</th>
 				<th>Username</th>
 			</tr>
 			<?php $i=1; while($row_selectManufacturer = mysqli_fetch_array($result_selectManufacturer)) { ?>
@@ -82,15 +82,15 @@
 		</article>
 		
 		<article>
-			<h2>Recently Added Products</h2>
+			<h2>Produk yang baru ditambahkan</h2>
 			<table class="table_displayData">
 			<tr>
-				<th> Code </th>
-				<th> Name </th>
-				<th> Price </th>
+				<th> Kode </th>
+				<th> Nama Produk </th>
+				<th> Harga </th>
 				<th> Unit </th>
-				<th> Category </th>
-				<th> Quantity </th>
+				<th> Kategori </th>
+				<th> Jumlah </th>
 			</tr>
 			<?php $i=1; while($row_selectProducts = mysqli_fetch_array($result_selectProducts)) { ?>
 			<tr>

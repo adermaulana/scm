@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Order Items </title>
+	<title> Barang Order </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -23,16 +23,16 @@
 		include("../includes/aside_retailer.inc.php");
 	?>
 	<section>
-		<h1>Order Items</h1>
+		<h1>Barang Order</h1>
 		<form action="insert_man_order.php" method="POST" class="form">
 		<table class="table_displayData">
 			<tr>
 				<th> ID </th>
-				<th> Name </th>
-				<th> Price </th>
-				<th> Available </th>
-				<th> Quantity </th>
-				<th> Price </th>
+				<th> Nama </th>
+				<th> Harga </th>
+				<th> Stok Tersedia </th>
+				<th> Jumlah </th>
+				<th> Total Harga </th>
 			</tr>
 			<?php $i=1; while($row_selectProducts = mysqli_fetch_array($result_selectProducts)) { ?>
 			<tr>
@@ -45,11 +45,11 @@
 			</tr>
 			<?php $i++; } ?>
 			<tr>
-				<td colspan="5" style="text-align:right;"> Total Price: </td>
+				<td colspan="5" style="text-align:right;"> Grand Total: </td>
 				<td> <input type="text" size="10" id="txtFinalAmount" name="total_price" readonly="readonly" value="" /> </td>
 			</tr>
 		</table>
-		<input id="btnSubmit" type="submit" value="Post Order" class="submit_button" />
+		<input id="btnSubmit" type="submit" value="Order Barang" class="submit_button" />
 		</form>
 	</section>
 	<?php

@@ -46,7 +46,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Update Category </title>
+	<title> Ubah Kategori </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -56,19 +56,19 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>Update Category</h1>
+		<h1>Ubah Kategori</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="categoryName">Category Name</label> </div>
-			<div class="input-box"> <input type="text" id="categoryName" name="txtCategoryName" placeholder="Category Name" value="<?php echo $row_selectCategoryDetails['cat_name']; ?>" required /> </div> <span class="error_message"><?php echo $categoryNameErr; ?></span>
+			<div class="label-block"> <label for="categoryName">Nama Kategori</label> </div>
+			<div class="input-box"> <input type="text" id="categoryName" name="txtCategoryName" placeholder="Nama Kategori" value="<?php echo $row_selectCategoryDetails['cat_name']; ?>" required /> </div> <span class="error_message"><?php echo $categoryNameErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="categoryDetails">Details</label> </div>
+			<div class="label-block"> <label for="categoryDetails">Detail</label> </div>
 			<div class="input-box"><textarea id="categoryDetails" name="txtCategoryDetails" placeholder="Details"><?php echo $row_selectCategoryDetails['cat_details']; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Update Category" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Ubah Kategori" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

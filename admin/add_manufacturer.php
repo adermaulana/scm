@@ -83,7 +83,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Add Manufacturer </title>
+	<title> Tambah Pabrik </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -93,20 +93,20 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Add Manufacturer</h1>
+		<h1>Tambah Pabrik</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="manufacturer:name">Name</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:name" name="txtManufacturerName" placeholder="Name" value="<?php echo $nameHolder; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
+			<div class="label-block"> <label for="manufacturer:name">Nama</label> </div>
+			<div class="input-box"> <input type="text" id="manufacturer:name" name="txtManufacturerName" placeholder="Nama" value="<?php echo $nameHolder; ?>" required /> </div> <span class="error_message"><?php echo $nameErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="manufacturer:email">Email</label> </div>
 			<div class="input-box"> <input type="text" id="manufacturer:email" name="txtManufacturerEmail" placeholder="Email" value="<?php echo $emailHolder; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="manufacturer:phone">Phone</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:phone" name="txtManufacturerPhone" placeholder="Phone" value="<?php echo $phoneHolder; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
+			<div class="label-block"> <label for="manufacturer:phone">Telepon</label> </div>
+			<div class="input-box"> <input type="text" id="manufacturer:phone" name="txtManufacturerPhone" placeholder="Telepon" value="<?php echo $phoneHolder; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="manufacturer:username">Username</label> </div>
@@ -117,7 +117,7 @@
 			<div class="input-box"> <input type="password" id="manufacturer:password" name="txtManufacturerPassword" placeholder="Password" required /> </div> <span class="error_message"><?php echo $passwordErr; ?></span>
 		</li>
 		<li>
-			<input type="submit" value="Add Manufacturer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Tambah Pabrik" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

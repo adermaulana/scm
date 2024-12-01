@@ -77,7 +77,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Edit Retailer </title>
+	<title> Ubah Pengecer </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -87,7 +87,7 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Edit Retailer</h1>
+		<h1>Ubah Pengecer</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
@@ -95,10 +95,10 @@
 			<div class="input-box"> <input type="text" id="retailer:username" name="txtRetailerUname" placeholder="Username" value="<?php echo $row_selectRetailerDetails['username']; ?>" required /> </div> <span class="error_message"><?php echo $usernameErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:areaCode">Area Code</label> </div>
+			<div class="label-block"> <label for="retailer:areaCode">Kode Area</label> </div>
 			<div class="input-box">
 				<select name="cmbAreaCode" id="retailer:areaCode">
-					<option value="" disabled>--- Select Area Code ---</option>
+					<option value="" disabled>--- Pilih Kode Area ---</option>
 			<?php while($row_selectArea = mysqli_fetch_array($result_selectArea)) { ?>
 					<option value="<?php echo $row_selectArea["area_id"]; ?>" <?php if($row_selectRetailerDetails['area_id'] == $row_selectArea["area_id"]){echo "selected";} ?>><?php echo $row_selectArea["area_code"]." (".$row_selectArea["area_name"].")"; ?></option>
 			<?php } ?>
@@ -106,7 +106,7 @@
 			 </div>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:phone">Phone</label> </div>
+			<div class="label-block"> <label for="retailer:phone">Telepon</label> </div>
 			<div class="input-box"> <input type="text" id="retailer:phone" name="txtRetailerPhone" placeholder="Phone" value="<?php echo $row_selectRetailerDetails['phone']; ?>" /> </div> <span class="error_message"><?php echo $phoneErr; ?></span>
 		</li>
 		<li>
@@ -114,11 +114,11 @@
 			<div class="input-box"> <input type="text" id="retailer:email" name="txtRetailerEmail" placeholder="Email" value="<?php echo $row_selectRetailerDetails['email']; ?>" required /> </div> <span class="error_message"><?php echo $emailErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="retailer:address">Address</label> </div>
+			<div class="label-block"> <label for="retailer:address">Alamat</label> </div>
 			<div class="input-box"> <textarea type="text" id="retailer:address" name="txtRetailerAddress" placeholder="Address"><?php echo $row_selectRetailerDetails['address']; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Update Retailer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Update Pengecer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

@@ -45,7 +45,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Edit Profile </title>
+	<title> Ubah Profil </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -55,23 +55,23 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Edit Profile</h1>
+		<h1>Ubah Profil </h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="oldPassword">Old Password</label> </div>
-			<div class="input-box"> <input type="password" id="oldPassword" name="txtOldPassword" placeholder="Old Password" required /> </div> <span class="error_message"><?php echo $oldPasswordErr; ?></span>
+			<div class="label-block"> <label for="oldPassword">Password Lama</label> </div>
+			<div class="input-box"> <input type="password" id="oldPassword" name="txtOldPassword" placeholder="Password Lama" required /> </div> <span class="error_message"><?php echo $oldPasswordErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="newPassword">New Password</label> </div>
-			<div class="input-box"> <input type="password" id="newPassword" name="txtNewPassword" placeholder="New Password"  required /> </div>
+			<div class="label-block"> <label for="newPassword">Password Baru</label> </div>
+			<div class="input-box"> <input type="password" id="newPassword" name="txtNewPassword" placeholder="Password Baru"  required /> </div>
 		</li>
 		<li>
-			<div class="label-block"> <label for="confirmPassword">Confirm Password</label> </div>
-			<div class="input-box"> <input type="password" id="confirmPassword" name="txtConfirmPassword" placeholder="Confirm Password"  required /> </div><span class="error_message"><?php echo $matchErr; ?></span>
+			<div class="label-block"> <label for="confirmPassword">Konfirmasi Password</label> </div>
+			<div class="input-box"> <input type="password" id="confirmPassword" name="txtConfirmPassword" placeholder="Konfirmasi Password"  required /> </div><span class="error_message"><?php echo $matchErr; ?></span>
 		</li>
 		<li>
-			<input type="submit" value="Change Password" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?>
+			<input type="submit" value="Ubah Password" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?>
 		</li>
 		</ul>
 		</form>

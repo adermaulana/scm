@@ -8,7 +8,7 @@
 	--><a href="../admin/add_manufacturer.php">Tambah Pabrik</a><!--
 	--><a href="../admin/add_distributor.php">Tambah Distributor</a><!--
 	--><a href="../admin/view_unit.php">Atur Unit</a><!--
-	--><a href="../admin/view_category.php">Atur Category</a><!--
+	--><a href="../admin/view_category.php">Atur Kategori</a><!--
 	--><a href="../admin/view_area.php">Atur Area</a><!--
 	--><a href="../admin/change_password.php">Atur Password</a>
 </aside>

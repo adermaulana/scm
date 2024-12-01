@@ -42,7 +42,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Add Category </title>
+	<title> Tambah Kategori </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -52,19 +52,19 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Add Category</h1>
+		<h1>Tambah Kategori</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="categoryName">Category Name</label> </div>
-			<div class="input-box"> <input type="text" id="categoryName" name="txtCategoryName" placeholder="Category Name" value="<?php echo $categoryNameHolder; ?>" required /> </div> <span class="error_message"><?php echo $categoryNameErr; ?></span>
+			<div class="label-block"> <label for="categoryName">Nama Kategori</label> </div>
+			<div class="input-box"> <input type="text" id="categoryName" name="txtCategoryName" placeholder="Nama Kategori" value="<?php echo $categoryNameHolder; ?>" required /> </div> <span class="error_message"><?php echo $categoryNameErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="categoryDetails">Details</label> </div>
-			<div class="input-box"><textarea id="categoryDetails" name="txtCategoryDetails" placeholder="Details"><?php echo $categoryDetailsHolder; ?></textarea> </div>
+			<div class="label-block"> <label for="categoryDetails">Detail</label> </div>
+			<div class="input-box"><textarea id="categoryDetails" name="txtCategoryDetails" placeholder="Detail"><?php echo $categoryDetailsHolder; ?></textarea> </div>
 		</li>
 		<li>
-			<input type="submit" value="Add Category" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Tambah Kategori" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>

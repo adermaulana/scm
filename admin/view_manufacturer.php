@@ -34,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Manufacturer </title>
+	<title> Lihat Pabrik </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 	<script language="JavaScript">
 	function toggle(source) {
@@ -52,15 +52,15 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>View Manufacturer</h1>
+		<h1>Lihat Pabrik</h1>
 		<form action="" method="POST" class="form">
 		<table class="table_displayData">
 			<tr>
 				<th> <input type="checkbox" onClick="toggle(this)" /> </th>
-				<th>Sr. No.</th>
-				<th>Name</th>
+				<th>No.</th>
+				<th>Nama</th>
 				<th>Email</th>
-				<th>Phone</th>
+				<th>Telepon</th>
 				<th>Username</th>
 				<th> Edit </th>
 			</tr>
@@ -76,7 +76,7 @@
 			</tr>
 			<?php $i++; } ?>
 		</table>
-		<input type="submit" value="Delete" class="submit_button"/>
+		<input type="submit" value="Hapus" class="submit_button"/>
 		</form>
 	</section>
 	<?php

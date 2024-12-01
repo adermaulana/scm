@@ -48,7 +48,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Add Unit </title>
+	<title> Tambah Area</title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -58,19 +58,19 @@
 		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
-		<h1>Add Unit</h1>
+		<h1>Tambah Area</h1>
 		<form action="" method="POST" class="form">
 		<ul class="form-list">
 		<li>
-			<div class="label-block"> <label for="areaName">Area Name</label> </div>
-			<div class="input-box"> <input type="text" id="areaName" name="txtAreaName" placeholder="Area Name" value="<?php echo $areaNameHolder; ?>" required /> </div> <span class="error_message"><?php echo $areaNameErr; ?></span>
+			<div class="label-block"> <label for="areaName">Nama Area</label> </div>
+			<div class="input-box"> <input type="text" id="areaName" name="txtAreaName" placeholder="Nama Area" value="<?php echo $areaNameHolder; ?>" required /> </div> <span class="error_message"><?php echo $areaNameErr; ?></span>
 		</li>
 		<li>
-			<div class="label-block"> <label for="areaCode">Area Code</label> </div>
-			<div class="input-box"> <input type="text" id="areaCode" name="txtAreaCode" placeholder="Area Code" value="<?php echo $areaCodeHolder; ?>" required /> </div>
+			<div class="label-block"> <label for="areaCode">Kode Area</label> </div>
+			<div class="input-box"> <input type="text" id="areaCode" name="txtAreaCode" placeholder="Kode Area" value="<?php echo $areaCodeHolder; ?>" required /> </div>
 		</li>
 		<li>
-			<input type="submit" value="Add Area" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
+			<input type="submit" value="Tambah Area" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>
 		</li>
 		</ul>
 		</form>
