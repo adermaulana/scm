@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Retailer: Home </title>
+	<title> Pengecer: Home </title>
 	<link rel="stylesheet" href="../includes/main_style.css" />
 </head>
 <body>
@@ -31,16 +31,16 @@
 		include("../includes/aside_retailer.inc.php");
 	?>
 	<section>
-		Welcome <?php echo $_SESSION['sessUsername']; ?>
+		Selamat Datang, <?php echo $_SESSION['sessUsername']; ?>
 		<article>
-			<h2>My Profile</h2>
+			<h2>Profilku</h2>
 			<table class="table_displayData">
 				<tr>
 					<th>Username</th>
-					<th>Area Code</th>
-					<th>Phone</th>
+					<th>Kode Area</th>
+					<th>Telepon</th>
 					<th>Email</th>
-					<th>Address</th>
+					<th>Alamat</th>
 					<th> Edit </th>
 				</tr>
 				<tr>
@@ -54,14 +54,14 @@
 			</table>
 		</article>
 		<article>
-			<h2>My Recent Orders</h2>
+			<h2>Order Terbaru</h2>
 			<table class="table_displayData" style="margin-top:20px;">
 			<tr>
-				<th> Order ID </th>
-				<th> Date </th>
-				<th> Approved </th>
+				<th> ID Order </th>
+				<th> Tanggal </th>
+				<th> Disetujui </th>
 				<th> Status </th>
-				<th> Details </th>
+				<th> Detail </th>
 			</tr>
 			<?php $i=1; while($row_selectOrder = mysqli_fetch_array($result_selectOrder)) { ?>
 			<tr>
@@ -72,10 +72,10 @@
 				<td>
 					<?php
 						if($row_selectOrder['approved'] == 0) {
-							echo "Not Approved";
+							echo "Tidak Disetujui";
 						}
 						else {
-							echo "Approved";
+							echo "Disetujui";
 						}
 					?>
 				</td>
@@ -85,7 +85,7 @@
 							echo "Pending";
 						}
 						else {
-							echo "Completed";
+							echo "Selesai";
 						}
 					?>
 				</td>

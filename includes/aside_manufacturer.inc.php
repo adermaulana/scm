@@ -7,7 +7,8 @@
 	--><a href="../manufacturer/add_product.php">Tambah Produk</a><!--
 	--><a href="../manufacturer/manage_stock.php">Atur Stok</a><!--
 	--><a href="../manufacturer/view_unit.php">Atur Unit</a><!--
-	--><a href="../manufacturer/view_category.php">Atur Kategori</a>
+	--><a href="../manufacturer/view_category.php">Atur Kategori</a><!--
+	--><a href="../manufacturer/view_returns.php">Barang Return</a>
 </aside>
 
 </td>

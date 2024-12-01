@@ -28,7 +28,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Orders </title>
+	<title> Lihat Order </title>
 	<link rel="stylesheet" href="../includes/main_style.css" >
 </head>
 <body>
@@ -38,22 +38,22 @@
 		include("../includes/aside_manufacturer.inc.php");
 	?>
 	<section>
-		<h1>Invoice Summary</h1>
+		<h1>Invoice</h1>
 		<table class="table_infoFormat">
 		<tr>
-			<td> Invoice No: </td>
+			<td> No Invoice: </td>
 			<td> <?php echo $row_selectInvoiceId['AUTO_INCREMENT']; ?> </td>
 		</tr>
 		<tr>
-			<td> Invoice Date: </td>
+			<td> Tanggal Invoice: </td>
 			<td> <?php echo date('d-m-Y'); ?> </td>
 		</tr>
 		<tr>
-			<td> Order No: </td>
+			<td> No Order: </td>
 			<td> <?php echo $order_id; ?> </td>
 		</tr>
 		<tr>
-			<td> Order Date: </td>
+			<td> Tanggal Order: </td>
 			<td> <?php echo date("d-m-Y",strtotime($row_selectOrder['date'])); ?> </td>
 		</tr>
 		</table>
@@ -61,10 +61,10 @@
 		<input type="hidden" name="order_id" value="<?php echo $order_id; ?>" />
 		<table class="table_invoiceFormat">
 			<tr>
-				<th> Products </th>
-				<th> Unit Price </th>
-				<th> Quantity </th>
-				<th> Amount </th>
+				<th> Produk </th>
+				<th> Harga Unit </th>
+				<th> Jumlah </th>
+				<th> Total Harga </th>
 			</tr>
 			<?php $i=1; while($row_selectOrderItems = mysqli_fetch_array($result_selectOrderItems)) { ?>
 			<tr>
@@ -86,14 +86,14 @@
 			</tr>
 		</table>
 			<br/>
-			Ship via: &nbsp;&nbsp;&nbsp;&nbsp;<select name="distributor">
-				<option value="" disabled selected>--- Select Distributor ---</option>
+			Diantar oleh: &nbsp;&nbsp;&nbsp;&nbsp;<select name="distributor">
+				<option value="" disabled selected>--- Pilih Distributor ---</option>
 				<?php while($rowSelectDistributor = mysqli_fetch_array($resultDistributor)) { ?>
 				<option value="<?php echo $rowSelectDistributor['dist_id']; ?>"> <?php echo $rowSelectDistributor['dist_name']; ?> </option>
 				<?php } ?>
 			</select> <br/>
 			<br/>
-			comments: <textarea maxlength="400" name="txtComment" rows="5" cols="30"></textarea>
+			Catatan: <textarea maxlength="400" name="txtComment" rows="5" cols="30"></textarea>
 			<br/>
 			<input type="submit" value="Generate Invoice" class="submit_button" />
 			<span class="error_message">
